@@ -283,9 +283,10 @@ body{ padding-top: var(--nav-h); }
 }
 
 .hero-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
     gap: var(--space-m);
-    flex-wrap: wrap;
+    max-width: 500px;  
 }
 
 /* Book Cover */
@@ -1199,6 +1200,7 @@ box-shadow: 0 0 10px rgba(226, 88, 34, 0.3);
     .hero .container {
         display: block;
         text-align: center;
+        padding: 0 var(--container-padding);
     }
     
     .hero-book {
@@ -1217,10 +1219,15 @@ box-shadow: 0 0 10px rgba(226, 88, 34, 0.3);
     height: auto;
   }
     
-    .hero-buttons {
-        margin-top: var(--space-l); 
-        justify-content: center;
-    }
+  .hero-buttons {
+    grid-template-columns: 1fr;          /* 1 per row */
+    max-width: 320px;                    /* roughly book width */
+    margin: var(--space-m) auto 0;       /* center the whole group */
+  }
+
+  .hero-buttons .btn {
+    width: 100%;                         /* fill that 320px nicely */
+  }
     
     .character-grid {
         grid-template-columns: 1fr;
@@ -1675,6 +1682,37 @@ body.no-scroll { overflow: hidden; }
 .social-links .btn-goodreads:hover {
   opacity: 0.9;
   transform: translateY(-2px);
+}
+
+/* === Global mobile spacing tweaks === */
+@media (max-width: 768px) {
+  /* All sections – less top/bottom padding */
+  section {
+    padding: var(--space-xl) 0;      /* 32px instead of 128px */
+  }
+
+  /* Hero – stop it being so tall on phones */
+  .hero {
+    padding: var(--space-xl) 0;     /* was var(--space-xxl) */
+    min-height: auto;               /* don't force full viewport height */
+  }
+
+  /* Novella section – tighten up */
+  .novella-showcase {
+    padding: var(--space-xl) 0;
+  }
+
+  /* About section – slightly smaller too */
+  .about-section {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Characters / Lore / Contact if you want them tighter as well */
+  .characters,
+  .lore,
+  .contact {
+    padding: var(--space-xl) 0;
+  }
 }
 
 
