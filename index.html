@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Jade Pandora: Two Kings, One Throne - A.D. Stevens</title>
+    <meta name="description" content="A humble farm boy. A weapon of the gods. A destiny that could save—or shatter—the world. The gripping first chapter in an epic fantasy saga.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+  <div class="container">
+    <div class="nav-wrapper">
+      <!-- Logo -->
+      <a href="#home" class="logo">
+        <img src="assets/LogoT.webp" alt="A D Stephens">
+      </a>
+
+      <!-- Toggle (hidden checkbox) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
+
+      <!-- Hamburger button (label controls checkbox) -->
+<label for="nav-toggle" class="mobile-menu-btn" aria-controls="navLinks">
+  <span></span><span></span><span></span>
+</label>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links" id="navLinks">
+  <a href="#home" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">Home</a>
+  <a href="#about" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">About</a>
+  <a href="#characters" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">Characters</a>
+  <a href="#novella" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">Novella</a>
+  <a href="#lore" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">Lore</a>
+  <a href="#contact" class="nav-link" onclick="document.getElementById('nav-toggle').checked = false">Contact</a>
+</div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+  <div class="hero-content">
+    <h1 class="hero-title">The Jade Pandora</h1>
+    <h2 class="hero-subtitle">Two Kings, One Throne</h2>
+    <p class="hero-author">by A.D. Stevens</p>
+
+    <div class="hero-description">
+      <p class="hero-tagline">
+        A humble farm boy. A weapon of the gods. A destiny that could save—or shatter—the world.
+      </p>
+    </div>
+
+    <!-- 🔻 Moved INSIDE hero-content and placed above buttons -->
+    <div class="hero-book">
+      <div class="book-cover">
+        <div class="book-spine"></div>
+        <img src="assets/cover.webp" class="book-front" alt="The Jade Pandora book cover">
+      </div>
+    </div>
+
+    <div class="hero-buttons">
+      <button class="btn btn-primary" onclick="window.open('https://www.amazon.co.uk/Jade-Pandora-Two-Kings-Throne-ebook/dp/B0FP478D8H/ref=sr_1_1?crid=114WHCDMZVSPF&dib=eyJ2IjoiMSJ9.lraec5dy2kT0Tsy8ZpOGGY9YphNWvf5xqYP3TVBB281wRTCOjnMFyxImDnQiXxrDXVzP86CZPNE0gGhjQZnfFI9-R5orCXqxNPZVfKMS0hG8-ZWUEMxtfbvMKpp9Y56cr2bcQBw2hbc2mk4K8-g1oiOu6ajhCZ9Ou1uDxD-r1hEXNbBsklXodE-iN6yQVXUHEzY_Qe4D7z_gCkaXmJXbH2WaCYUajXgTW9G9saYnfWI.Y4I5HZ9SaqyOKYn1Au7SVzYXM_y2NGmXuB_4J5bCXEE&dib_tag=se&keywords=the+jade+pandora&qid=1757341664&sprefix=%2Caps%2C193&sr=8-1', '_blank')">Get Your Copy</button>
+      <button id="readSampleBtn" class="btn btn-secondary">Read Sample</button>
+      <button class="btn btn-primary" onclick="window.open('https://preview.mailerlite.io/forms/1803906/165871066667812767/share', '_blank')">Join The Newsletter</button>
+    </div>
+  </div>
+</div>
+        
+        <div class="sword-divider"></div>
+    </section>
+
+    <!-- About The Book Section -->
+    <section id="about" class="aboutB">
+        <div class="container">
+            <h2 class="section-title">The Legend Begins</h2>
+            
+            <div class="aboutB-content">
+                <div class="aboutB-text">
+                    <p>When Zenith of Grissam inherits the Echidna Flame, an ancient sword forged in the war of creation, he's drawn into a battle far beyond his fields. Joined by Lemma of Sciran, and Cathal of Vastuk.</p>
+                    
+                    <p>Zenith discovers their weapons are part of the legendary Rysendar—three relics whose united power can end the rising darkness… or unleash it.</p>
+                    
+                    <blockquote class="fantasy-quote">
+                        "As twisted creatures stalk the land and an ancient god stirs from his prison, alliances will be tested, legends will awaken, and the fate of two kingdoms will rest on the choices of reluctant heroes."
+                    </blockquote>
+                    
+                    <p>Perfect for fans of high fantasy epics, richly built worlds, and fast-paced quests, The Jade Pandora is the gripping first chapter in a saga of loyalty, legacy, and the unbreakable bonds forged in war.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="characters">
+        <div class="container">
+            <h2 class="section-title">Heroes of Destiny</h2>
+            
+            <div class="character-grid">
+                <div class="character-card">
+                    <div class="character-image zenith"></div>
+                    <h3 class="character-name">Zenith of Grissam</h3>
+                    <p class="character-weapon">Bearer of the Echidna Flame</p>
+                    <p class="character-description">A humble farm boy thrust into legend, wielding an ancient sword forged in the war of creation.</p>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-image lemma"></div>
+                    <h3 class="character-name">Lemma of Sciran</h3>
+                    <p class="character-weapon">Guardian of Ancient Secrets</p>
+                    <p class="character-description"> A warrior for her people and the heir to the throne of Sciran. Current holder of The Star of Sciran.</p>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-image cathal"></div>
+                    <h3 class="character-name">Cathal of Vastuk</h3>
+                    <p class="character-weapon">Master of the Third Relic</p>
+                    <p class="character-description">A warrior of a forgotten land, and lore of a bygone age. Keeper of the staff of Angelus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Novella Showcase Section -->
+<section id="novella" class="novella-showcase">
+    <div class="novella-background"></div>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="novella-header">
+            <div class="novella-badge">
+                <span class="badge-line"></span>
+                <span class="badge-text">Novella</span>
+                <span class="badge-line"></span>
+            </div>
+
+            <h2 class="section-title">Lemma: The Star At The Beginning</h2>
+            <p class="novella-tagline">
+                Discover the origin story of the warrior princess who defied destiny
+            </p>
+        </div>
+
+        <!-- NEW CONTENT STRUCTURE -->
+        <div class="novella-content">
+
+            <!-- 1) DESCRIPTION TEXT -->
+            <div class="novella-description">
+
+                <div class="novella-series-tag">
+                    <span class="tag-line"></span>
+                    <span>The Jade Pandora Series</span>
+                </div>
+
+                <h3 class="novella-subtitle">
+                    A Divine Weapon. <br>
+                    <span class="highlight-jade">A Destiny Rejected.</span>
+                </h3>
+
+                <div class="novella-text">
+                    <p>
+                        A divine weapon linked to the gods themselves,
+                        <span class="text-jade">the Star of Sciran</span> decides who will be the next Queen.
+                    </p>
+
+                    <p>
+                        Lemma, the next heir, rejects the decorum and the forced nature of being royal.
+                        She may have been born a princess, but she chooses the life of a warrior.
+                    </p>
+
+                    <p>
+                        Naturally empathetic and granted the ability to see inside the souls of those
+                        who have become tainted, she trains daily to ready herself for the day she may
+                        need to fight a god and his creations.
+                    </p>
+
+                    <p class="novella-quote">
+                        When her people call, she will always answer—no matter the distance she travels.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2) BOOK COVER -->
+            <div class="novella-book-wrapper">
+                <div class="novella-book" id="novellaBook">
+                    <div class="novella-cover-front">
+                        <img src="assets/NovellaFrontCover.webp"
+                             alt="Lemma: The Star At The Beginning - Front Cover">
+                        <div class="cover-overlay"></div>
+                    </div>
+
+                    <div class="novella-cover-back">
+                        <img src="assets/NovellaBackCover.webp"
+                             alt="Lemma: The Star At The Beginning - Back Cover">
+                    </div>
+                </div>
+
+                <p class="flip-hint">Click to flip cover</p>
+                <div class="novella-decoration decoration-tl"></div>
+                <div class="novella-decoration decoration-br"></div>
+            </div>
+
+            <!-- 3) GET NOVELLA BUTTON -->
+            <div class="novella-buttons">
+                <button class="btn btn-primary"
+                    onclick="window.open('https://www.amazon.co.uk/Jade-Pandora-Lemma-Star-Beginning-ebook/dp/B0FPQHF93N/ref=sr_1_2?crid=114WHCDMZVSPF&dib=eyJ2IjoiMSJ9.lraec5dy2kT0Tsy8ZpOGGY9YphNWvf5xqYP3TVBB281wRTCOjnMFyxImDnQiXxrDXVzP86CZPNE0gGhjQZnfFI9-R5orCXqxNPZVfKMS0hG8-ZWUEMxtfbvMKpp9Y56cr2bcQBw2hbc2mk4K8-g1oiOu6ajhCZ9Ou1uDxD-r1hEXNbBsklXodE-iN6yQVXUHEzY_Qe4D7z_gCkaXmJXbH2WaCYUajXgTW9G9saYnfWI.Y4I5HZ9SaqyOKYn1Au7SVzYXM_y2NGmXuB_4J5bCXEE&dib_tag=se&keywords=the+jade+pandora&qid=1757341664&sprefix=%2Caps%2C193&sr=8-2', '_blank')">
+                    Get the Novella
+                </button>
+            </div>
+
+            <!-- 4) CTA BOX -->
+            <div class="novella-cta-box">
+                <p class="cta-main">
+                    If you enjoyed this novella from the world of
+                    <span class="text-ember">The Jade Pandora</span>,<br>
+                    then please consider picking up a copy of<br>
+                    <strong>The Jade Pandora: Two Kings, One Throne</strong><br>
+                    <span class="cta-sub">The first book of the main series</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sword-divider"></div>
+</section>
+
+
+    <!-- Lore Section -->
+    <section id="lore" class="lore">
+        <div class="container">
+            <h2 class="section-title">The Rysendar Legacy</h2>
+            
+            <div class="lore-scroll">
+                <div class="scroll-content">
+                    <h3 class="lore-subtitle">The Three Relics of Power</h3>
+                    <p>In the dawn of creation, when gods walked among mortals and magic flowed like rivers through the land, three weapons were forged in the cosmic fires of the first war.</p>
+                    
+                    <div class="relic-list">
+                        <div class="relic-item">
+                            <span class="relic-name">The Echidna Flame</span>
+                            <span class="relic-description">A sword of living fire, capable of cutting through both flesh and shadow</span>
+                        </div>
+                        <div class="relic-item">
+                            <span class="relic-name">Star of Sciran</span>
+                            <span class="relic-description">A large five-bladed throwing star, control of the powers of lightning</span>
+                        </div>
+                        <div class="relic-item">
+                            <span class="relic-name">Staff of Angelus</span>
+                            <span class="relic-description">Lost to time or realm unknown, powers yet to be revealed </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+    <section  class="about-section">
+        <div class="container">
+            <div class="container">
+            <h2 class="section-title">About A D Stevens</h2>
+                <H3 class="lore-subtitle">Forging worlds of legend, loyalty, and war</h3>
+            </div>
+
+            <div class="about-content">
+                <div class="author-card">
+                    <div class="author-info">
+                        <img src="assets/front.webp" 
+                             alt="A D Stevens" class="author-photo">
+                        <div class="author-text">
+                            <h3 class="relic-name">The Mind Behind the Fantasy</h3>
+                            <p class="relic-description">
+                          Hi, I’m Andy, the author of The Jade Pandora: Two Kings One Throne.
+
+So why do I write? you, ask? The truth is, I've always written short stories, etc, since I was about 11 or 12 years old when I met an author at school and spent the day doing what they used to call a writing master class. I write fantasy-based books/stories because I've always been an avid reader of fantasy. Additionally, I am a fantasy RPG gamer, with favourites like Final Fantasy, Grandia, and Dragon Quest. Then, I have always watched Anime since I grew up in Hong Kong in my formative years. It was my kids’ TV, like you watched Rugrats. I watched Dragon Ball, Studio Ghibli movies, and other anime.
+</p>
+For years, I didn’t even consider that I could publish; it was always just a hobby, even this book seemed like that at one point.
+</p>
+The book took me over ten years to write; it began as a I want to write a book type project and had many, many stop-start moments along the way.
+</p>
+In recent months, thanks to the people I have met and my biggest fan and critic (my wife), I've finally managed to complete, edit, and release it. It is the first of hopefully many projects I have in the works.
+</p>
+Book two is my current WIP alongside the Story of the female MC’s back story as a novella. (Hopefully edited and out soon.)
+</p>
+I’m also a Functional Neurological Disorder suffer (AKA NEAD wen I was diagnosed) along with other neurological disabilities, thus resulting in me being a stay-at-home dad.
+</p>
+If you have read this far I thankyou for taking the time to get to know me and my background.
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section --> 
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Join the Quest</h2>
+            
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>Ready to embark on an epic journey? Get updates on the series, exclusive content, and be the first to know about new releases.</p>
+                </div>
+                
+<form class="contact-form" id="contactForm" action="https://formspree.io/f/xovnzwjo" method="POST">
+  <div class="form-group">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
+<!-- hidden thank you message -->
+<p id="thankYouMessage" style="display:none; color:var(--jade-glow); font-weight:600; margin-top:16px;">
+  ✅ Thank you! Your message has been sent.
+</p>
+            </div>
+        </div>
+    </section>
+
+<footer class="footer">
+  <div class="container">
+
+    <!-- Top -->
+    <div class="footer-top">
+      <div class="footer-column">
+        <h3 class="footer-title">A D Stevens</h3>
+        <p>Sword and Sorcery Fantasy Author</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#lore">Lore</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Connect With Us</h4>
+<div class="social-links">
+  <a class="btn-tiktok" href="https://www.tiktok.com/@ad_stevens_author?lang=en">Follow me on TikTok</a>
+  <a class="btn-goodreads" href="https://www.goodreads.com/author/show/59017555.A_D_Stevens">Review My Goodreads</a>
+</div>
+      </div>
+    </div>
+
+<!-- Read Sample Modal -->
+<div class="sample-modal" id="sampleModal" aria-hidden="true" role="dialog" aria-labelledby="sampleTitle">
+  <div class="sample-backdrop" data-close></div>
+
+  <article class="sample-paper scroll-skin" role="document" tabindex="-1">
+    <header class="sample-header">
+      <h2 id="sampleTitle">Prologue</h2>
+      <button class="sample-close" aria-label="Close sample" data-close>&times;</button>
+    </header>
+
+    <div class="sample-body">
+      <p>Zenith walked these fields daily, his family's land, a land where gods had walked in ages past—the place of many ancient stories that had never been told or had yet to unfold.</p>
+      <p>Another ordinary spring day, working hard in the soil getting the field ready for sowing, moving his Mullok-drawn plough in lines, turning the earth, preparing it to plant the next crop. He spent this time far from his stepbrother, Merrik, and the other farmhands, especially on days when he felt like reminiscing about his father. Often pondering how different it could have been for him and his brother had tragedy not struck all those years ago, stealing their parents from them. Under mysterious circumstances, a sudden, unexplained plague took not only them but many others from the village.</p>
+      <p>This occurred after the loss of his grandfather, only six months prior. There wandering, following the plough in its straight-line monotony from one end of the field to the other, thinking more as he laboured step after step in the fields, getting ready to produce a bountiful harvest year after year.</p>
+      <p>His father, Ake, would often say, “Your mother, Zenith, was worth more than any throne in the world. I quite happily traded my crown for Calluses and never needed to look back.”</p>
+      <p>Ake was always one to be among the people, enjoying life before ascending the throne. Living as a village farmer to be with their mother. The woman who had captured his heart falling deeply in love, whilst out to meet the people as an envoy to the throne. Ake was truly a prince among men. The people of Grissam reflected this in the stories and memories they shared. Ake had fallen for their mother in a heartbeat, instantly refusing to leave Grissam from that very day to be with her always.</p>
+      <p>This was the way his father always told it, possibly to make it seem more fantastical and romantic as a bedtime story for him and Merrik</p>
+      <p>Ake had spent years building the farm with his own hands, never seeking handouts from Zenith’s grandfather, King Barathor. Ake never used his rank as a reason to shy away from hard graft.</p>
+      <p>Zenith fondly remembered the years he had spent watching with his stepbrother, learning from their father about the life he had chosen. Zenith never got any sense that Ake lacked completeness in his choice.</p>
+      <p>Laughing to himself as he remembered his father's mantra. A man must follow his heart first, feelings second and his duty third. Easier said than done when you're knee deep in a muddy field, following a Mullock’s arse.</p>
+      <p>This advice had always guided him well enough and was one of the main reasons that Zenith never envied his uncle the king. The king saw them as commoners and completely ignored them. Even though Zenith didn’t envy his uncle’s lofty status, he didn’t know him, nor want to; even as a child, they had never interacted. His uncle Quinten wasn’t the most caring of people; in fact, most would say he was materialistic and selfish.</p>
+      <p>Although he had a right to be royal by blood and could claim the titles and estates of his late father, he saw no point; he had his remaining family around him, which was all that mattered.</p>
+      <p>His mother and father had loved him dearly, and so had their grandfather, the previous king. He visited his grandfather many times with Ake whilst he was alive. The time he spent with Barathor was always intriguing and fun. Ultimately, they would always return to Grissam; the luxury of royalty never suited his or Ake’s free spirits and love of nature.</p>
+      <p>Whilst on his deathbed, his grandfather announced that he would be passing the throne to his father’s younger, inexperienced, less qualified brother, Quinten. This was unprecedented. Quinten had never been for, or of, the people. King Barathor knew this; many speculated that his death was the result of foul play and that he had been forced into declaring Quinten as his successor to the throne, but no proof was ever found.</p>
+      <p>Even with his family history, this life suited him fine. Days of hard labour tending to the fields, doing what was necessary to yield the best crop.</p>
+      <p>Nights practising his husbandry skills, taming beasts of all types from the wilds surrounding the village limits, using them to improve the people’s lives or releasing them as needed. Simple creatures like the winged squirrel, which the smiths always wanted for their ability to harness the wind element, and the wild cats, which they domesticated to hunt mice and other small animals in the barns and buildings. Other larger creatures, such as boars and bears, would be used to maintain the forest's equilibrium under the foresters as protectors.</p>
+      <p>A skill he had become well known for, as no others could match him, even veteran tamers. It was a skill he’d had since birth; nobody knew why. It was like he had been born for more than a farmer's life. He often felt a sense of longing for more. A vast part of who he was seemed outside of his grasp.</p>
+      <p>It was as if he had a task in life that he had yet to fulfil, something that made him want to leave, but had not given him reason to. If the choice did come, he didn’t know if he genuinely wanted it; it would mean leaving all he knew and loved.</p>
+      <p>The sun hit harder as midday arrived, bringing him out of his thoughts. His thirst was genuinely beginning to devour him, forcing him to stop and walk to the field's edge. Picking up his skin of water, placing it up to his dry lips, his Adam's apple permeating the skin of his throat whilst gulping and drinking deeply. A voice came from the distance. He didn’t hear them clearly, just a muffled sound on the wind.</p>
+      <p>Turning around, he saw him. A man stood tall and proud, covered entirely by a red hooded robe, with a large staff in one hand and a sheathed sword in the other.</p>
+      <p>Zenith, confused and a little off guard, stared at the hooded figure. He called out to him, receiving no response. Zenith attempted to return to his work. He sensed no ill intent in the air around them, as if the man wasn’t really present. Zenith found he was becoming intrigued by him and approached. That led to one of the most essential gifts he would ever receive, the Echidna Flame.</p>
+      <p>This would see Zenith leave his beloved home to seek new friends, encounter mythical beasts and face all manner of horrific creatures, in the quest to truly become one with his newfound powers and fight alongside those he loved.</p>
+    </div>
+  </article>
+</div>
+
+    <!-- Bottom -->
+<div class="footer-bottom">
+  <span>© 2025 A D Stevens. All rights reserved.</span>
+  <span class="dot" aria-hidden="true">·</span>
+
+  <!-- Logo-only credit -->
+  <a class="credit" href="https://www.solarisai.co.uk"
+     target="_blank" rel="noopener"
+     aria-label="Website by Solaris AI">
+    <img src="assets/solarisai.webp" alt="">
+    <span class="sr-only">Website by Solaris AI</span>
+  </a>
+</div>
+
+</footer>
+</body>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  var form = e.target;
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      form.reset();
+      document.getElementById("thankYouMessage").style.display = "block";
+    } else {
+      alert("Oops! Something went wrong. Please try again.");
+    }
+  }).catch(() => {
+    alert("Oops! Something went wrong. Please try again.");
+  });
+});
+</script>
+
+<script>
+(() => {
+  const modal  = document.getElementById('sampleModal');
+  const openBtn = document.getElementById('readSampleBtn') || document.querySelector('.js-read-sample');
+  const closeEls = () => modal.querySelectorAll('[data-close]');
+  let lastFocused = null;
+
+  if (!modal || !openBtn) return;
+
+  const focusableSel = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+
+  function openSample(){
+    lastFocused = document.activeElement;
+    modal.classList.add('is-open');
+    document.body.classList.add('no-scroll');
+    // focus first focusable inside paper
+    const first = modal.querySelector('.sample-paper').querySelector(focusableSel);
+    (first || modal.querySelector('.sample-paper')).focus();
+    modal.setAttribute('aria-hidden','false');
+    document.addEventListener('keydown', onKeydown);
+  }
+
+  function closeSample(){
+    modal.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+    modal.setAttribute('aria-hidden','true');
+    document.removeEventListener('keydown', onKeydown);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function onKeydown(e){
+    if (e.key === 'Escape') closeSample();
+
+    // simple focus trap
+    if (e.key === 'Tab'){
+      const focusables = modal.querySelectorAll(focusableSel);
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last  = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  }
+
+  openBtn.addEventListener('click', (e) => { e.preventDefault(); openSample(); });
+  closeEls().forEach(el => el.addEventListener('click', closeSample));
+})();
+
+// Flip novella cover front/back
+  const novellaBook = document.getElementById('novellaBook');
+
+  if (novellaBook) {
+    // make it clickable
+    novellaBook.addEventListener('click', () => {
+      novellaBook.classList.toggle('flipped');
+    });
+
+    // a11y: keyboard + focus
+    novellaBook.setAttribute('tabindex', '0');
+    novellaBook.setAttribute('role', 'button');
+    novellaBook.setAttribute('aria-label', 'Flip novella cover');
+
+    novellaBook.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        novellaBook.classList.toggle('flipped');
+      }
+    });
+  }
+</script>
+
+</html>
