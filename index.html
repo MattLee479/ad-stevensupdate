@@ -46,40 +46,60 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background"></div>
-        <div class="container">
-  <div class="hero-content">
-    <h1 class="hero-title">The Jade Pandora</h1>
-    <h2 class="hero-subtitle">Two Kings, One Throne</h2>
-    <p class="hero-author">by A.D. Stevens</p>
+ <!-- Hero Section -->
+   <section id="home" class="hero">
+  <div class="hero-background"></div>
 
-    <div class="hero-description">
-      <p class="hero-tagline">
-        A humble farm boy. A weapon of the gods. A destiny that could save—or shatter—the world.
-      </p>
-    </div>
+  <div class="container">
+    <div class="hero-content">
+      <!-- Accessible text for SEO/screen readers -->
+      <h1 class="sr-only">The Jade Pandora</h1>
 
-    <!-- 🔻 Moved INSIDE hero-content and placed above buttons -->
-    <div class="hero-book">
-      <div class="book-cover">
-        <div class="book-spine"></div>
-        <img src="assets/cover.webp" class="book-front" alt="The Jade Pandora book cover">
+      <!-- Visual logo in place of text heading -->
+      <div class="hero-title hero-title-logo">
+        <img src="assets/logo2.webp" alt="The Jade Pandora">
+      </div>
+
+      <h2 class="hero-subtitle">Two Kings, One Throne</h2>
+
+      <p class="hero-author">by A.D. Stevens</p>
+
+      <div class="hero-description">
+        <p class="hero-tagline">
+          A humble farm boy. A weapon of the gods. A destiny that could save—or shatter—the world.
+        </p>
+      </div>
+
+      <!-- Buttons stay in the text column -->
+      <div class="hero-buttons">
+        <button class="btn btn-primary"
+          onclick="window.open('https://www.amazon.co.uk/Jade-Pandora-Two-Kings-Throne-ebook/dp/B0FP478D8H/ref=sr_1_1?crid=114WHCDMZVSPF&dib=eyJ2IjoiMSJ9.lraec5dy2kT0Tsy8ZpOGGY9YphNWvf5xqYP3TVBB281wRTCOjnMFyxImDnQiXxrDXVzP86CZPNE0gGhjQZnfFI9-R5orCXqxNPZVfKMS0hG8-ZWUEMxtfbvMKpp9Y56cr2bcQBw2hbc2mk4K8-g1oiOu6ajhCZ9Ou1uDxD-r1hEXNbBsklXodE-iN6yQVXUHEzY_Qe4D7z_gCkaXmJXbH2WaCYUajXgTW9G9saYnfWI.Y4I5HZ9SaqyOKYn1Au7SVzYXM_y2NGmXuB_4J5bCXEE&dib_tag=se&keywords=the+jade+pandora&qid=1757341664&sprefix=%2Caps%2C193&sr=8-1', '_blank')">
+          Get Your Copy
+        </button>
+        <button id="readSampleBtn" class="btn btn-secondary">Read Sample</button>
+        <button class="btn btn-primary"
+          onclick="window.open('https://preview.mailerlite.io/forms/1803906/165871066667812767/share', '_blank')">
+          Join The Newsletter
+        </button>
+        <button class="btn btn-secondary"
+          onclick="window.open('https://www.goodreads.com/book/show/240815946-the-jade-pandora-two-kings-one-throne', '_blank')">
+          Leave a Review
+        </button>
+      </div>
+
+      <!-- Book goes in column 2 via CSS grid -->
+      <div class="hero-book">
+        <div class="book-cover">
+          <div class="book-spine"></div>
+          <img src="assets/cover.webp" class="book-front" alt="The Jade Pandora book cover">
+        </div>
       </div>
     </div>
-
-    <div class="hero-buttons">
-      <button class="btn btn-primary" onclick="window.open('https://www.amazon.co.uk/Jade-Pandora-Two-Kings-Throne-ebook/dp/B0FP478D8H/ref=sr_1_1?crid=114WHCDMZVSPF&dib=eyJ2IjoiMSJ9.lraec5dy2kT0Tsy8ZpOGGY9YphNWvf5xqYP3TVBB281wRTCOjnMFyxImDnQiXxrDXVzP86CZPNE0gGhjQZnfFI9-R5orCXqxNPZVfKMS0hG8-ZWUEMxtfbvMKpp9Y56cr2bcQBw2hbc2mk4K8-g1oiOu6ajhCZ9Ou1uDxD-r1hEXNbBsklXodE-iN6yQVXUHEzY_Qe4D7z_gCkaXmJXbH2WaCYUajXgTW9G9saYnfWI.Y4I5HZ9SaqyOKYn1Au7SVzYXM_y2NGmXuB_4J5bCXEE&dib_tag=se&keywords=the+jade+pandora&qid=1757341664&sprefix=%2Caps%2C193&sr=8-1', '_blank')">Get Your Copy</button>
-      <button id="readSampleBtn" class="btn btn-secondary">Read Sample</button>
-      <button class="btn btn-primary" onclick="window.open('https://preview.mailerlite.io/forms/1803906/165871066667812767/share', '_blank')">Join The Newsletter</button>
-      <button class="btn btn-secondary" onclick="window.open('https://www.goodreads.com/book/show/240815946-the-jade-pandora-two-kings-one-throne', '_blank')">Leave a Review</button>
-    </div>
   </div>
-</div>
-        
-        <div class="sword-divider"></div>
-    </section>
+
+  <div class="sword-divider"></div>
+</section>
+
 
     <!-- About The Book Section -->
     <section id="about" class="aboutB">
