@@ -13,11 +13,11 @@
 .cyoa-background::before {
     content: '';
     position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(58, 167, 143, 0.1) 0%, transparent 70%);
+    top: 15%;          /* Move up/down: lower % = higher position */
+    left: 5%;          /* Move left/right: lower % = more left */
+    width: 800px;      /* BLOB SIZE: Increase for bigger blob */
+    height: 800px;     /* BLOB SIZE: Increase for bigger blob */
+    background: radial-gradient(circle, rgba(58, 167, 143, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     animation: glowPulse 5s ease-in-out infinite;
 }
@@ -25,11 +25,11 @@
 .cyoa-background::after {
     content: '';
     position: absolute;
-    bottom: 10%;
-    right: 15%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(226, 88, 34, 0.15) 0%, transparent 70%);
+    bottom: 5%;        /* Move up/down: lower % = lower position */
+    right: 5%;         /* Move left/right: lower % = more right */
+    width: 700px;      /* BLOB SIZE: Increase for bigger blob */
+    height: 700px;     /* BLOB SIZE: Increase for bigger blob */
+    background: radial-gradient(circle, rgba(226, 88, 34, 0.18) 0%, transparent 70%);
     border-radius: 50%;
     animation: glowPulse 5s ease-in-out infinite 2.5s;
 }
@@ -290,24 +290,6 @@ tw-broken-link {
     color: #ff6b6b !important;
     border-bottom: 2px dashed #ff6b6b !important;
     cursor: not-allowed !important;
-}
-
-/* ===== SCROLL STYLING ===== */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--obsidian-black);
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--jade-glow), var(--molten-ember));
-    border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, var(--molten-ember), var(--jade-glow));
 }
 
 /* ===== RESPONSIVE ===== */

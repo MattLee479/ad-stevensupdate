@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonus Content - Generator</title>
-    <meta name="description" content="">
-    <meta name="robots" content="noindex, nofollow, noarchive">
-
+    <title>Appritian Name Generator - The Jade Pandora</title>
+    <meta name="description" content="Generate your own Appritian name and origin from the world of The Jade Pandora.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,14 +33,18 @@
             z-index: 0;
         }
 
+        /* =================================================
+           BACKGROUND BLOBS - Adjust width/height to resize
+           Move by changing top/left/bottom/right percentages
+           ================================================= */
         .generator-background::before {
             content: '';
             position: absolute;
-            top: 30%;
-            left: 10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(58, 167, 143, 0.12) 0%, transparent 70%);
+            top: 15%;          /* Move up/down: lower % = higher position */
+            left: 5%;          /* Move left/right: lower % = more left */
+            width: 800px;      /* BLOB SIZE: Increase for bigger blob */
+            height: 800px;     /* BLOB SIZE: Increase for bigger blob */
+            background: radial-gradient(circle, rgba(58, 167, 143, 0.15) 0%, transparent 70%);
             border-radius: 50%;
             animation: glowPulse 4s ease-in-out infinite;
         }
@@ -50,18 +52,18 @@
         .generator-background::after {
             content: '';
             position: absolute;
-            bottom: 20%;
-            right: 10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(226, 88, 34, 0.12) 0%, transparent 70%);
+            bottom: 5%;        /* Move up/down: lower % = lower position */
+            right: 5%;         /* Move left/right: lower % = more right */
+            width: 700px;      /* BLOB SIZE: Increase for bigger blob */
+            height: 700px;     /* BLOB SIZE: Increase for bigger blob */
+            background: radial-gradient(circle, rgba(226, 88, 34, 0.18) 0%, transparent 70%);
             border-radius: 50%;
             animation: glowPulse 4s ease-in-out infinite 2s;
         }
 
         .generator-content {
             position: relative;
-            z-index: 1;
+            z-index: 10;
             max-width: 700px;
             width: 100%;
             text-align: center;
@@ -247,10 +249,11 @@
             animation: fadeInUp 1s ease-out 1s both;
         }
 
+        /* PRIMARY BUTTON - Orange ember style (matches main site) */
         .btn-spin {
-            background: var(--molten-ember);
-            color: var(--white-mist);
-            box-shadow: 0 4px 15px rgba(226, 88, 34, 0.3);
+  background: var(--molten-ember);
+  color: var(--white-mist);
+  box-shadow: 0 4px 15px rgba(226, 88, 34, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -274,7 +277,7 @@
         }
 
         .btn-spin:hover {
-            background: linear-gradient(135deg, var(--molten-ember) 0%, var(--jade-glow) 100%);
+  background: linear-gradient(135deg, var(--molten-ember) 0%, var(--jade-glow) 100%);
   box-shadow:
     0 6px 20px rgba(226, 88, 34, 0.4),
     0 0 30px var(--jade-glow);
@@ -290,6 +293,19 @@
         .btn-spin:disabled:hover::before {
             width: 0;
             height: 0;
+        }
+
+        /* SECONDARY BUTTON - Jade outline style */
+        .btn-secondary-gen {
+            background: transparent;
+            color: var(--jade-glow);
+            border: 2px solid var(--jade-glow);
+            box-shadow: none;
+        }
+
+        .btn-secondary-gen:hover {
+            background: rgba(58, 167, 143, 0.2);
+            box-shadow: var(--shadow-jade);
         }
 
         /* Particle effects */
@@ -322,6 +338,70 @@
             100% {
                 opacity: 0;
                 transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
+        /* ===== EMBER FIRE ANIMATION ===== */
+        .ember-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 5;  /* Visible above background, but behind content */
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--molten-ember);
+            border-radius: 50%;
+            box-shadow: 0 0 6px 2px rgba(226, 88, 34, 0.8);
+            animation: emberFloat linear infinite;
+        }
+
+        @keyframes emberFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* ===== DECORATIVE LOGO ===== */
+        .decorative-logo {
+            position: absolute;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .decorative-logo.left {
+            left: -5%;
+            top: 20%;
+            width: 300px;
+            transform: rotate(-10deg);
+        }
+
+        .decorative-logo.right {
+            right: -5%;
+            bottom: 15%;
+            width: 280px;
+            transform: rotate(10deg);
+        }
+
+        @media (max-width: 1024px) {
+            .decorative-logo {
+                display: none;
             }
         }
 
@@ -445,9 +525,18 @@
         </div>
     </nav>
 
+    <a href="index.html" class="back-link">Return to Main</a>
+
+    <!-- Ember Container - Fire particles -->
+    <div class="ember-container" id="emberContainer"></div>
+
     <main class="generator-page">
         <div class="generator-background"></div>
         <div class="particles" id="particles"></div>
+        
+        <!-- Decorative Logos (visible on desktop only) -->
+        <img src="assets/ltsatb_logo.png" alt="" class="decorative-logo left" aria-hidden="true">
+        <img src="assets/2k1t_logo.png" alt="" class="decorative-logo right" aria-hidden="true">
 
         <div class="generator-content">
             <h1 class="generator-title">Appritian Identity</h1>
@@ -482,6 +571,26 @@
     'use strict';
 
     // ============================================
+    // EMBER COUNT - Change this number to add more or less fire particles
+    // Current: 30 (doubled from original 15)
+    // Recommended range: 10 (subtle) to 50 (intense)
+    // ============================================
+    const EMBER_COUNT = 30;
+    
+    // Create ember particles
+    const emberContainer = document.getElementById('emberContainer');
+    for (let i = 0; i < EMBER_COUNT; i++) {
+        const ember = document.createElement('div');
+        ember.className = 'ember';
+        ember.style.left = Math.random() * 100 + '%';
+        ember.style.animationDuration = (10 + Math.random() * 8) + 's';
+        ember.style.animationDelay = Math.random() * 8 + 's';
+        ember.style.width = (2 + Math.random() * 5) + 'px';
+        ember.style.height = ember.style.width;
+        emberContainer.appendChild(ember);
+    }
+
+    // ============================================
     // EASY TO EDIT: Add your options here!
     // Simply add new categories or modify existing ones
     // ============================================
@@ -490,126 +599,114 @@
         // Format: 'categoryKey': { label: 'Display Label', options: ['Option1', 'Option2', ...] }
         
         firstName: {
-    label: 'First Name',
-    options: [
-        'Arel','Bennen','Corin','Dallis','Emon','Farra','Garel','Henwick','Isley','Jorin',
-        'Ketha','Laran','Meya','Norrel','Orra','Pellin','Quinla','Rella','Soran','Talen',
-        'Ulven','Varin','Wessa','Yorin','Zalla','Avel','Brissa','Caelor','Delta','Enla',
-        'Fennic','Gara','Hallen','Illar','Jesra','Kelwin','Lysa','Marro','Nessa','Ollen',
-        'Pria','Rilven','Sella','Tarris','Unwen','Vessa','Weslor','Yalith','Zarael','Awen',
-        'Branth','Colra','Deryn','Elsar','Fira','Gellan','Harla','Iven','Jessa','Korrel',
-        'Leven','Mierin','Nalen','Olra','Pyrel','Relka','Sarnel','Tessa','Urin','Varel',
-        'Winna','Yora','Zerin','Asha','Brin','Caleen','Denro','Elwen','Fressa','Garron',
-        'Helia','Irin','Jenra','Kellan','Lera','Mistrel','Nior','Ora','Pellia','Rennar',
-        'Sarra','Tovin','Ulessa','Vallen','Wist','Yessa','Zinna','Arelia','Brendar',
-        'Collinara',
-
-        'Kres','Voran','Drath','Serrik','Jolven','Tharun','Korr','Velk','Drannis','Sorrik',
-        'Keln','Vallek','Trosk','Marrad','Dren','Kelth','Skarn','Voren','Jask','Thoss',
-        'Drevik','Vessar','Trenn','Kelros','Marrik','Kherron','Solvik','Travor','Kesslan',
-        'Rhalik','Vothar','Dannik','Skerr','Vosran','Karyesh','Dranel','Havrik','Vornas',
-        'Jerrik','Thovran','Varrek','Kossith','Drannor','Vashen','Sollik','Ravos','Krellar',
-        'Darrik','Ossar','Viskan','Serin','Kassha','Veyra','Drinna','Talin','Ossira',
-        'Yevra','Kessia','Thera','Malin','Sorya','Nethra','Vaska','Rinla','Jeyra','Shavra',
-        'Kelni','Vosria','Talyss','Orria','Vellin','Sarria','Drassa','Kireth','Thanya',
-        'Marris','Nelka','Vessra','Osseni','Teshra','Kyliss','Soreth','Jorna','Khelra',
-        'Velonni','Yashara','Drenna','Vellassa','Tareya','Rhenna','Skella','Kassrin',
-        'Travenna','Dorshia','Verrin','Ossya','Thalria','Sanna','Marethra','Kyrin',
-
-        'Othrel','Khassun','Dravenk','Tharvos','Kelnar','Zhorak','Vessun','Marrhul','Ossrak',
-        'Karthesh','Drunval','Thossun','Karrhet','Vornass','Desshul','Orrvak','Khirrel',
-        'Tharam','Nesshor','Varhesh','Dorrak','Keshrul','Talvorr','Drathul','Vesshor',
-        'Marrkul','Osshem','Khoriss','Tharrel','Vhalrek','Sorrath','Kelvass','Drulkan',
-        'Thavorn','Orshem','Marrhoss','Khessul','Vrakenn','Dalrath','Thossir','Neshral',
-        'Korrhun','Drakhur','Sarrkesh','Varrhel','Othmarr','Zhakir','Dravenar','Veshkar',
-        'Tharvun','Sherra','Vessara','Khelnis','Drissa','Othria','Neshka','Marrish',
-        'Vossira','Kelsha','Thalniss','Orithra','Khessia','Serhira','Varrin','Ashra',
-        'Tholiss','Vhelra','Ossenra','Neshya','Darissa','Yessha','Zhalra','Khorissa',
-        'Talsira','Merthra','Varniss','Orrhessa','Thirra','Khareen','Selvra','Ashera',
-        'Marressa','Vesshira','Jhalin','Dorsha','Kelrath','Oshalin','Yarra','Narliss',
-        'Veshal','Serrek','Mahria','Thoness','Yessra','Zarrin','Kesshra','Othla','Vreliss',
-        'Merrhira','Sharnath',
-
-        'Arlo','Venn','Mira','Jalen','Corrin','Renn','Oren','Jora','Mavin','Sela','Rovin',
-        'Kelna','Yara','Tharen','Cassi','Nerin','Velis','Orin','Dara','Toren','Selis',
-        'Pera','Levra','Henn','Mera','Allin','Kira','Dalen','Oris','Yensa','Marra',
-        'Sylen','Thraen','Olla','Verra','Delin','Isra','Wena','Saro','Lysar','Yassa',
-        'Corra',
-
-        'Vaelorian','Arcthelis','Seralynd','Orthellian','Maravelle','Caelistra',
-        'Dorthavian','Lysandrel','Vhoren','Reshalyn','Valcoran','Ysandria','Ellathor',
-        'Solyandra','Kirravon','Telyssia','Mavaryn','Drethalian','Calandria','Thalorian',
-        'Rhaelyse','Vorthalyn','Selvaris','Olyrienne','Renvoran','Issavre','Corindale',
-        'Aerossin','Verathiel','Rhaegen','Miravell','Elvaron','Veliscia','Tharnovel',
-        'Aeralyth','Orisse','Khorandel','Vaeryss','Illorin','Mavriel','Kassandrael',
-        'Dresthavir','Aerwynne','Solvarim','Yssavel','Corianth','Meralyth','Therosin',
-        'Avalyra','Vorthessan','Lysaviel','Calravon','Oriselle','Davarnel','Trissara',
-        'Vysandor','Eralyth','Salvaron','Illessia','Dornavell','Vaemira','Khorvess',
-        'Aralinde','Sorellan','Elavris','Vaethryn','Mirisar','Dantheris','Rhyssora',
-        'Corvalen','Telaniel','Maravoss','Solenvar','Nyssalia','Ariondar','Velissaen',
-        'Elandros','Ysoria','Thravess','Coriselle','Valtherin','Lysorin','Aerandrel',
-        'Myravel','Sorravian','Velrissia','Jovenar','Aracelle','Theralyth','Oryndrel',
-        'Vassaran','Ellorisse','Calvenor','Rhalyssa','Toraldir','Ysavron','Meriselle',
-        'Vornalyth','Eldassir','Sarynthia'
-    ]
-},
-
+            label: 'First Name',
+            options: [
+                'Arel','Bennen','Corin','Dallis','Emon','Farra','Garel','Henwick','Isley','Jorin',
+                'Ketha','Laran','Meya','Norrel','Orra','Pellin','Quinla','Rella','Soran','Talen',
+                'Ulven','Varin','Wessa','Yorin','Zalla','Avel','Brissa','Caelor','Delta','Enla',
+                'Fennic','Gara','Hallen','Illar','Jesra','Kelwin','Lysa','Marro','Nessa','Ollen',
+                'Pria','Rilven','Sella','Tarris','Unwen','Vessa','Weslor','Yalith','Zarael','Awen',
+                'Branth','Colra','Deryn','Elsar','Fira','Gellan','Harla','Iven','Jessa','Korrel',
+                'Leven','Mierin','Nalen','Olra','Pyrel','Relka','Sarnel','Tessa','Urin','Varel',
+                'Winna','Yora','Zerin','Asha','Brin','Caleen','Denro','Elwen','Fressa','Garron',
+                'Helia','Irin','Jenra','Kellan','Lera','Mistrel','Nior','Ora','Pellia','Rennar',
+                'Sarra','Tovin','Ulessa','Vallen','Wist','Yessa','Zinna','Arelia','Brendar',
+                'Collinara',
+                'Kres','Voran','Drath','Serrik','Jolven','Tharun','Korr','Velk','Drannis','Sorrik',
+                'Keln','Vallek','Trosk','Marrad','Dren','Kelth','Skarn','Voren','Jask','Thoss',
+                'Drevik','Vessar','Trenn','Kelros','Marrik','Kherron','Solvik','Travor','Kesslan',
+                'Rhalik','Vothar','Dannik','Skerr','Vosran','Karyesh','Dranel','Havrik','Vornas',
+                'Jerrik','Thovran','Varrek','Kossith','Drannor','Vashen','Sollik','Ravos','Krellar',
+                'Darrik','Ossar','Viskan','Serin','Kassha','Veyra','Drinna','Talin','Ossira',
+                'Yevra','Kessia','Thera','Malin','Sorya','Nethra','Vaska','Rinla','Jeyra','Shavra',
+                'Kelni','Vosria','Talyss','Orria','Vellin','Sarria','Drassa','Kireth','Thanya',
+                'Marris','Nelka','Vessra','Osseni','Teshra','Kyliss','Soreth','Jorna','Khelra',
+                'Velonni','Yashara','Drenna','Vellassa','Tareya','Rhenna','Skella','Kassrin',
+                'Travenna','Dorshia','Verrin','Ossya','Thalria','Sanna','Marethra','Kyrin',
+                'Othrel','Khassun','Dravenk','Tharvos','Kelnar','Zhorak','Vessun','Marrhul','Ossrak',
+                'Karthesh','Drunval','Thossun','Karrhet','Vornass','Desshul','Orrvak','Khirrel',
+                'Tharam','Nesshor','Varhesh','Dorrak','Keshrul','Talvorr','Drathul','Vesshor',
+                'Marrkul','Osshem','Khoriss','Tharrel','Vhalrek','Sorrath','Kelvass','Drulkan',
+                'Thavorn','Orshem','Marrhoss','Khessul','Vrakenn','Dalrath','Thossir','Neshral',
+                'Korrhun','Drakhur','Sarrkesh','Varrhel','Othmarr','Zhakir','Dravenar','Veshkar',
+                'Tharvun','Sherra','Vessara','Khelnis','Drissa','Othria','Neshka','Marrish',
+                'Vossira','Kelsha','Thalniss','Orithra','Khessia','Serhira','Varrin','Ashra',
+                'Tholiss','Vhelra','Ossenra','Neshya','Darissa','Yessha','Zhalra','Khorissa',
+                'Talsira','Merthra','Varniss','Orrhessa','Thirra','Khareen','Selvra','Ashera',
+                'Marressa','Vesshira','Jhalin','Dorsha','Kelrath','Oshalin','Yarra','Narliss',
+                'Veshal','Serrek','Mahria','Thoness','Yessra','Zarrin','Kesshra','Othla','Vreliss',
+                'Merrhira','Sharnath',
+                'Arlo','Venn','Mira','Jalen','Corrin','Renn','Oren','Jora','Mavin','Sela','Rovin',
+                'Kelna','Yara','Tharen','Cassi','Nerin','Velis','Orin','Dara','Toren','Selis',
+                'Pera','Levra','Henn','Mera','Allin','Kira','Dalen','Oris','Yensa','Marra',
+                'Sylen','Thraen','Olla','Verra','Delin','Isra','Wena','Saro','Lysar','Yassa',
+                'Corra',
+                'Vaelorian','Arcthelis','Seralynd','Orthellian','Maravelle','Caelistra',
+                'Dorthavian','Lysandrel','Vhoren','Reshalyn','Valcoran','Ysandria','Ellathor',
+                'Solyandra','Kirravon','Telyssia','Mavaryn','Drethalian','Calandria','Thalorian',
+                'Rhaelyse','Vorthalyn','Selvaris','Olyrienne','Renvoran','Issavre','Corindale',
+                'Aerossin','Verathiel','Rhaegen','Miravell','Elvaron','Veliscia','Tharnovel',
+                'Aeralyth','Orisse','Khorandel','Vaeryss','Illorin','Mavriel','Kassandrael',
+                'Dresthavir','Aerwynne','Solvarim','Yssavel','Corianth','Meralyth','Therosin',
+                'Avalyra','Vorthessan','Lysaviel','Calravon','Oriselle','Davarnel','Trissara',
+                'Vysandor','Eralyth','Salvaron','Illessia','Dornavell','Vaemira','Khorvess',
+                'Aralinde','Sorellan','Elavris','Vaethryn','Mirisar','Dantheris','Rhyssora',
+                'Corvalen','Telaniel','Maravoss','Solenvar','Nyssalia','Ariondar','Velissaen',
+                'Elandros','Ysoria','Thravess','Coriselle','Valtherin','Lysorin','Aerandrel',
+                'Myravel','Sorravian','Velrissia','Jovenar','Aracelle','Theralyth','Oryndrel',
+                'Vassaran','Ellorisse','Calvenor','Rhalyssa','Toraldir','Ysavron','Meriselle',
+                'Vornalyth','Eldassir','Sarynthia'
+            ]
+        },
 
         origin: {
-    label: 'Place of Origin',
-    options: [
-        'Treesedge','Barrowheath','Dunmere','Windrow','Chalkbend','Oatmere',
-        'Grindleford','Threshton','Millspire','Hearthwick','Valepond',
-        'Ferralstead','Rowanholt','Whistlebank','Thistlemarch','Highoat',
-        'Mirefield','Lanternmere','Latchford','Harrowsdeep','Tillerfen',
-        'Dustgrove','Rumblehollow','Sunstaithe','Mossbarrow','Freywick',
-        'Greathorn','Emberfield','Oakhaven','Tressarun','Hillwash',
-        'Chalkreach','Riverhallow','Kettlebrook','Fenmarch','Siremeade',
-        'Wayfen','Stillbarrow','Wyrstead','Fieldthorn','Balecrest',
-        'Turnwyck','Cressmere','Woldsong','Pollenwick','Cragwash',
-        'Gullentop','Bristledown','Marshwall','Yorenfell','Plowrise',
-        'Wrenford','Grainvale','Latchmere','Foxlow','Mosslorn',
-        'Brambleholt','Stagfen','Welterun','Hushedge','Cressthorn',
-        'Oldmere','Tallowwick','Spryfen','Oatshade','Ferraldale',
-        'Hartholm','Ryehaven','Everchalk','Brindleholt','Tannorun',
-        'Dalehusk','Threshburn','Loomreach','Spindlefen','Ferralbridge',
-        'Westgrove','Wistledorn','Chalkbarrow','Farfen','Mosscreek',
-        'Goldmere','Dunnoway','Tallwick','Clearhollow','Saffronreach',
-        'Whitemere','Bramblen','Orinbank','Kestralrun','Fallowhaven',
-        'Wheatford','Brookshade','Tidingale','Virenstead','Harlothorn',
-        'Merribank','Clifffall','Spirefen','Vale’s End'
-    ]
-},
-
-
-        // ============================================
-        // EXAMPLE: To add Date of Birth, uncomment below:
-        // ============================================
-         birthMonth: {
-             label: 'Birth Month',
-             options: [
-                 'Firstmoon', 'Frostfall', 'Dawning', 'Bloomtide',
-                 'Sunpeak', 'Highsummer', 'Harvestfall', 'Shadowtide',
-                 'Mistmonth', 'Fading', 'Darknight', 'Yearsend'
-             ]
-         },
-
-         birthDay: {
-             label: 'Birth Day',
-             options: Array.from({length: 30}, (_, i) => `Day ${i + 1}`)
-         },
-
-        // ============================================
-        // EXAMPLE: To add a Title/Class, uncomment below:
-        // ============================================
-        title: {
-             label: 'Title',
+            label: 'Place of Origin',
             options: [
-                 'The Brave', 'The Wise', 'The Swift', 'The Bold',
-                 'The Silent', 'The Fierce', 'The Kind', 'The Wanderer',
-                 'The Seeker', 'The Guardian', 'The Healer', 'The Shadow'
-             ]
-         }
+                'Treesedge','Barrowheath','Dunmere','Windrow','Chalkbend','Oatmere',
+                'Grindleford','Threshton','Millspire','Hearthwick','Valepond',
+                'Ferralstead','Rowanholt','Whistlebank','Thistlemarch','Highoat',
+                'Mirefield','Lanternmere','Latchford','Harrowsdeep','Tillerfen',
+                'Dustgrove','Rumblehollow','Sunstaithe','Mossbarrow','Freywick',
+                'Greathorn','Emberfield','Oakhaven','Tressarun','Hillwash',
+                'Chalkreach','Riverhallow','Kettlebrook','Fenmarch','Siremeade',
+                'Wayfen','Stillbarrow','Wyrstead','Fieldthorn','Balecrest',
+                'Turnwyck','Cressmere','Woldsong','Pollenwick','Cragwash',
+                'Gullentop','Bristledown','Marshwall','Yorenfell','Plowrise',
+                'Wrenford','Grainvale','Latchmere','Foxlow','Mosslorn',
+                'Brambleholt','Stagfen','Welterun','Hushedge','Cressthorn',
+                'Oldmere','Tallowwick','Spryfen','Oatshade','Ferraldale',
+                'Hartholm','Ryehaven','Everchalk','Brindleholt','Tannorun',
+                'Dalehusk','Threshburn','Loomreach','Spindlefen','Ferralbridge',
+                'Westgrove','Wistledorn','Chalkbarrow','Farfen','Mosscreek',
+                'Goldmere','Dunnoway','Tallwick','Clearhollow','Saffronreach',
+                'Whitemere','Bramblen','Orinbank','Kestralrun','Fallowhaven',
+                'Wheatford','Brookshade','Tidingale','Virenstead','Harlothorn',
+                'Merribank','Clifffall','Spirefen','Vale\'s End'
+            ]
+        },
+
+        birthMonth: {
+            label: 'Birth Month',
+            options: [
+                'Firstmoon', 'Frostfall', 'Dawning', 'Bloomtide',
+                'Sunpeak', 'Highsummer', 'Harvestfall', 'Hearthtide',
+                'Mistmonth', 'Fading', 'Darknight', 'Yearsend'
+            ]
+        },
+
+        birthDay: {
+            label: 'Birth Day',
+            options: Array.from({length: 30}, (_, i) => `Day ${i + 1}`)
+        },
+
+        title: {
+            label: 'Title',
+            options: [
+                'The Brave', 'The Wise', 'The Swift', 'The Bold',
+                'The Silent', 'The Fierce', 'The Kind', 'The Wanderer',
+                'The Seeker', 'The Guardian', 'The Healer', 'The Flame Keeper'
+            ]
+        }
     };
 
     // ============================================
