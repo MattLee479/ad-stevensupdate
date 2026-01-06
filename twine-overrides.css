@@ -111,15 +111,27 @@
     font-size: 18px;
 }
 
+/* ===== SCROLLING FIX (single scrollbar, works on all devices) ===== */
+html, body {
+    height: 100% !important;
+    overflow: hidden !important; /* prevents the outer page scrollbar */
+}
+
+
 /* ===== STORY CONTAINER ===== */
 tw-story {
     display: block;
+
+    height: 100vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+
     background: transparent !important;
     color: var(--white-mist) !important;
     font-family: 'Inter', sans-serif !important;
     font-size: 18px !important;
     line-height: 1.8 !important;
-    min-height: 100vh;
     padding: 140px 24px 60px !important;
 }
 
